@@ -47,4 +47,12 @@ public class CustomerController {
         }
     }
 
+    @PostMapping("/test-4")
+    public ResponseEntity<?> test4(@RequestBody CustomerRequest request) {
+        try {
+            return ResponseEntity.ok().body("Lan test 4 success roi nhe");
+        } catch (Exception e) {
+            return ResponseEntity.ok(new ResponseBase().error(400, e.getMessage()));
+        }
+    }
 }
